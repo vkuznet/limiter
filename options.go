@@ -24,6 +24,9 @@ type Options struct {
 	// proxy is not configured properly to forward a trustworthy client IP.
 	// Please read the section "Limiter behind a reverse proxy" in the README for further information.
 	ClientIPHeader string
+
+	// WhiteList represents white list of keys which will be skipped by limiter
+	WhiteList []string
 }
 
 // WithIPv4Mask will configure the limiter to use given mask for IPv4 address.
