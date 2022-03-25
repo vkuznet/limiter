@@ -62,3 +62,13 @@ func WithClientIPHeader(header string) Option {
 		o.ClientIPHeader = header
 	}
 }
+
+// WithWhiteList will configure the limiter to use list of provided
+// exception keys (which may be IP addresses or custome header values).
+// This list will be consulted at every request and if key will be found in
+// WhiteList the limiter functionality will be skipped for that key.
+func WithWhiteList(wlist []string) Option {
+	return func(o *Options) {
+		o.WhiteList = wlist
+	}
+}
