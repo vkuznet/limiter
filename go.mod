@@ -1,4 +1,4 @@
-module github.com/ulule/limiter/v3
+module github.com/vkuznet/limiter/v3
 
 go 1.17
 
@@ -7,6 +7,7 @@ require (
 	github.com/go-redis/redis/v8 v8.11.4
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.7.0
+	github.com/ulule/limiter/v3 v3.10.0
 	github.com/valyala/fasthttp v1.34.0
 )
 
