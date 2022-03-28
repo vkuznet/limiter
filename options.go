@@ -25,8 +25,8 @@ type Options struct {
 	// Please read the section "Limiter behind a reverse proxy" in the README for further information.
 	ClientIPHeader string
 
-	// WhiteList represents white list of keys which will be skipped by limiter
-	WhiteList []string
+	// SkipList represents white list of keys which will be skipped by limiter
+	SkipList []string
 }
 
 // WithIPv4Mask will configure the limiter to use given mask for IPv4 address.
@@ -63,12 +63,12 @@ func WithClientIPHeader(header string) Option {
 	}
 }
 
-// WithWhiteList will configure the limiter to use list of provided
+// WithSkipList will configure the limiter to use list of provided
 // exception keys (which may be IP addresses or custome header values).
 // This list will be consulted at every request and if key will be found in
-// WhiteList the limiter functionality will be skipped for that key.
-func WithWhiteList(wlist []string) Option {
+// SkipList the limiter functionality will be skipped for that key.
+func WithSkipList(wlist []string) Option {
 	return func(o *Options) {
-		o.WhiteList = wlist
+		o.SkipList = wlist
 	}
 }
